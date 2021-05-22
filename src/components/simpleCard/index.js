@@ -47,7 +47,7 @@ export default function SimpleCard({ image, title, content, numberCard }) {
                 <Typography variant="h1" style={{ fontSize: "18px", lineHeight: "24px", marginBottom: "24px" }}>
                     {title}
                 </Typography>
-                <Typography style={{ color: "#828282", fontWeight: "500", textAlign: "left", fontSize: "12px", lineHeight: "16px", marginBottom: "24px" }}>
+                <Typography style={{ color: "#828282", fontWeight: "500", textAlign: "left", fontSize: "12px", lineHeight: "19px", marginBottom: "24px" }}>
                     {content}
                 </Typography>
             </CardContent>
