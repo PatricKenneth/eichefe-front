@@ -91,38 +91,22 @@ const styles = makeStyles(( theme ) => ({
         }
     },
     h1: {
-        lineHeight: "98px", 
-        width: "475px",
-        [theme.breakpoints.only("md")]: {
-            width: "100%",
-        },
-        [theme.breakpoints.only("sm")]: {
-            width: "100%",
-        },
         [theme.breakpoints.only("xs")]: {
             fontSize: "36px",
             lineHeight: "50px",
-            width: "100%",
         },
     },
-    h5: {
-        width: "399px",
-        [theme.breakpoints.only("md")]: {
-            width: "100%",
-        },
-        [theme.breakpoints.only("sm")]: {
-            width: "100%",
-        },
+    body1: {
         [theme.breakpoints.only("xs")]: {
             fontSize: "14px",
             lineHeight: "21px",
-            width: "100%",
         },
     },
-    button: {
+    subtitle1: {
+        lineHeight: "58px",
         [theme.breakpoints.only("xs")]: {
-            fontSize: "16px",
-            width: "100%",
+            fontSize: "36px",
+            lineHeight: "50px",
         },
     },
     buttonDark: {
@@ -163,10 +147,10 @@ const styles = makeStyles(( theme ) => ({
             left: "177px",
         },
         [theme.breakpoints.down("xs")]: {
-            width: "128px",
-            height: "128px",
+            width: "108px",
+            height: "108px",
             top: "10px",
-            left: "80px",
+            left: "32px",
         },
     },
     floatingImg12: {
@@ -186,10 +170,10 @@ const styles = makeStyles(( theme ) => ({
             left: "106px",
         },
         [theme.breakpoints.down("xs")]: {
-            width: "124px",
-            height: "124px",
-            top: "110px",
-            left: "25px",
+            width: "104px",
+            height: "104px",
+            top: "96px",
+            left: "-16px",
         },
     },
     floatingImg13: {
@@ -209,10 +193,10 @@ const styles = makeStyles(( theme ) => ({
             left: "24px",
         },
         [theme.breakpoints.down("xs")]: {
-            width: "106px",
-            height: "106px",
-            top: "-5px",
-            left: "-50px",
+            width: "86px",
+            height: "86px",
+            top: "-88px",
+            left: "146px",
         },
     },
     rectangle_74: {
@@ -236,20 +220,20 @@ function Content() {
         <>
             <Grid container className={contentStyle.container} style={{ background: "#E8FBFF" }}>
                 <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
-                    <Typography variant="h1" className={contentStyle.h1}>
+                    <Typography variant="h1" className={contentStyle.h1} style={{ ineHeight: "98px", }}>
                         Atinja seu público alvo
                     </Typography>
-                    <Typography variant="h5" className={contentStyle.h5} style={{ margin: "16px 0px 40px 0px", textAlign: "left", }}>
+                    <Typography className={contentStyle.body1} style={{ lineHeight: "32px", margin: "16px 0px 40px 0px" }}>
                         Use o poder do Tráfego Pago e leve seu 
                         faturamento para o próximo nível.
                     </Typography>
                     <Button variant="contained" color="primary" className={contentStyle.buttonDark}>
-                        <Typography variant="button" className={contentStyle.button}>
+                        <Typography variant="button">
                             Para quem é o tráfego pago?
                         </Typography>
                     </Button>
                     <Button variant="outlined" color="primary" className={contentStyle.buttonAbout}>
-                        <Typography variant="button" className={contentStyle.button}>
+                        <Typography variant="button" style={{ color: "#0085E8" }}>
                             Sobre
                         </Typography>
                     </Button>
@@ -266,7 +250,7 @@ function Content() {
                                 }}>
                             <img src="./images/whatsapp_1.svg" alt="" style={{ width: "25px", height: "25px" }} />
                         </Box>
-                        <Typography variant="h5" >
+                        <Typography style={{ fontSize: "24px", lineHeight: "24px", color:"#939191", }} >
                             88 9903-0508
                         </Typography>
                     </Box>
@@ -294,17 +278,10 @@ function Content() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={5} xl={6}>
-                    <Typography variant="h3" style={{ width: "100%", maxWidth: "480px", marginBottom: "16px" }}>
+                    <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ width: "100%", maxWidth: "480px", marginBottom: "16px", }}>
                         O que seu negócio precisa?
                     </Typography>
-                    <Typography variant="h5" className={contentStyle.h5} 
-                                style={{ 
-                                    textAlign: "left", 
-                                    width: "100%", 
-                                    maxWidth: "465px", 
-                                    fontSize: "20px",
-                                    lineHeight: "28px",
-                                }}>
+                    <Typography className={contentStyle.body1} style={{ width: "100%", maxWidth: "440px", lineHeight: "28px",  }}>
                         Se o conteúdo que você produz não está chegando nas pessoas e em seus clientes, 
                         consequentemente impactando nas suas vendas então a gestão de tráfego pago é uma 
                         forma prática e de resultados excelentes. Tráfego é um dos principais métodos de 
@@ -327,10 +304,10 @@ function Content() {
                             }}>
                             <img src="./images/trafego.svg" alt="" />
                         </Box>
-                        <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
+                        <Typography variant="h5" style={{ marginBottom: "24px", }}>
                             O que é Tráfego?
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
+                        <Typography  style={{ width: "100%", maxWidth: "286px" }}>
                             Tráfego é as ações que as pessoas fazem ao navegar pela internet seja em aplicativo ou 
                             em sites, as pessoas clicam para visualizar vídeos, para ver mais informações sobre um 
                             produto ou comprar algo, as plataformas como Facebook e Google monitoram esses 
@@ -349,10 +326,10 @@ function Content() {
                             }}>
                             <img src="./images/trafego.svg" alt="" />
                         </Box>
-                        <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
+                        <Typography variant="h5" style={{ marginBottom: "24px", }}>
                             Gestor de Tráfego Pago
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
+                        <Typography style={{ width: "100%", maxWidth: "286px" }}>
                             É a pessoa que vai gerenciar os investimentos em anúncios, entender os objetivos dos clientes e alinhar as 
                             expectativas. Definir os testes e organização dos públicos ideal, apresentar relatório dos resultados em 
                             datas pré estabelecidas, auxiliar nas estratégias e criação de criativos de vídeos e fotos.
@@ -370,10 +347,10 @@ function Content() {
                             }}>
                             <img src="./images/trafego.svg" alt="" />
                         </Box>
-                        <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
+                        <Typography variant="h5" style={{ marginBottom: "24px" }}>
                             Benefícios
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
+                        <Typography style={{ width: "100%", maxWidth: "286px" }}>
                             Ganho de visibilidade e presença digital. Atração de audiência para seu negócio. Segmentação e 
                             personalização de anúncios para o público ideal.
                         </Typography>
@@ -382,10 +359,10 @@ function Content() {
             </Grid>
             <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "176px 40px 72px 40px", }}>
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={6} style={{ marginBottom: "40px" }}>
-                    <Typography variant="h3" style={{ marginBottom: "40px", maxWidth: "386px", width: "100%" }}>
+                    <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "40px", maxWidth: "386px", width: "100%" }}>
                         Para quem é o tráfego pago?
                     </Typography>
-                    <Typography variant="h5" style={{ textAlign: "left", maxWidth: "520px", width: "100%" }}>
+                    <Typography style={{ maxWidth: "499px", width: "100%" }}>
                         Para todo criador de conteúdo ou para quem vende algum produto e quer escalar 
                         sua visibilidade e vendas. Seja em site, perfil do Instagram, página de vendas e etc… 
                         É ideal para quem está iniciando, pois não exige grandes investimentos iniciais como 
@@ -464,7 +441,7 @@ function Content() {
             </Grid>
             <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "128px 40px 72px 40px", }}>
                 <Grid item style={{ marginBottom: "80px" }}>
-                    <Typography variant="h3" style={{ textAlign: "center", marginBottom: "40px", maxWidth: "491px", width: "100%" }}>
+                    <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ textAlign: "center", marginBottom: "40px", maxWidth: "491px", width: "100%" }}>
                         Como funciona meu serviço ?
                     </Typography>
                 </Grid>
@@ -494,10 +471,10 @@ function Content() {
             </Grid>
             <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "176px 40px 72px 40px", }}>
                 <Grid item style={{ marginBottom: "80px" }}>
-                    <Typography variant="h3" style={{ textAlign: "center", marginBottom: "8px", width: "100%" }}>
+                    <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ textAlign: "center", marginBottom: "8px", width: "100%" }}>
                         Dicas do Chefe
                     </Typography>
-                    <Typography variant="h5" style={{ textAlign: "center", width: "100%" }}>
+                    <Typography style={{ textAlign: "center", width: "100%" }}>
                         Tráfego é um jogo de médio e longo prazo
                     </Typography>
                 </Grid>

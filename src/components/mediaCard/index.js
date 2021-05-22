@@ -53,10 +53,10 @@ export default function MediaCard({ image, title, setStateModal, contentModal })
           title={title}
         />
         <CardContent className={classes.content}>
-            <Typography variant="h3" style={{ fontSize: "24px" }}>
+            <Typography style={{ fontSize: "24px", fontWeight: "900", lineHeight: "62px", color: "#27AED8" }}>
               Dicas do Chefe
             </Typography>
-            <Typography variant="h5" style={{ textAlign: "left", fontSize: "16px" }}>
+            <Typography style={{ textAlign: "left", fontSize: "16px" }}>
               {title}
             </Typography>
         </CardContent>
@@ -67,7 +67,7 @@ export default function MediaCard({ image, title, setStateModal, contentModal })
                     height: "40px", 
                     borderRadius: "60px" 
                   }}>
-                <Typography variant="h5" style={{ color:"#F7F7F7" }}>
+                <Typography variant="button" style={{ color:"#F7F7F7" }}>
                     Ler mais
                 </Typography>
           </Button>

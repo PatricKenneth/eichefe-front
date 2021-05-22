@@ -50,12 +50,12 @@ const handleClose = () => {
     <Box>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={stateModal.open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          <Typography variant="h3" style={{ fontSize: "24px", lineHeight: "32px" }}>
+          <Typography variant="subtitle1" style={{ fontSize: "24px", lineHeight: "32px" }}>
             {stateModal.title}
           </Typography>
         </DialogTitle>
         <DialogContent dividers>
-          <Typography variant="h5" style={{ textAlign: "left", fontSize: "18px", lineHeight: "38px" }}>
+          <Typography style={{ lineHeight: "38px" }}>
             {stateModal.content}
           </Typography>
         </DialogContent>
@@ -66,7 +66,7 @@ const handleClose = () => {
                     height: "40px", 
                     borderRadius: "60px" 
                   }}>
-                <Typography variant="h5" style={{ color:"#F7F7F7" }}>
+                <Typography variant="button" style={{ color:"#F7F7F7" }}>
                     Fechar
                 </Typography>
           </Button>

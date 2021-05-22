@@ -19,18 +19,18 @@ function Header() {
             <Hidden smDown>
                 <Grid item container alignItems="center" justify="center" md={6} lg={5} xl={5} >
                     <Box style={{ display: "flex", flexDirection: "row" }}>
-                        <Typography variant="h5" style={{ marginRight: "40px" }}> Tráfego </Typography>
-                        <Typography variant="h5" style={{ marginRight: "40px" }}> Serviços </Typography>
-                        <Typography variant="h5" style={{ marginRight: "40px" }}> Resultados </Typography>
-                        <Typography variant="h5"> Sobre </Typography>
+                        <Typography style={{ marginRight: "40px" }}> Tráfego </Typography>
+                        <Typography style={{ marginRight: "40px" }}> Serviços </Typography>
+                        <Typography style={{ marginRight: "40px" }}> Resultados </Typography>
+                        <Typography> Sobre </Typography>
                     </Box>
                 </Grid>
             </Hidden>
             <Hidden xsDown>
                 <Grid item container alignItems="center" justify="flex-end" sm={6} md={4} lg={4} xl={4} >
                     <Box style={{ display: "flex", flexDirection: "row" }}>
-                        <img src="./images/instagram.svg" alt="" style={{ marginRight: "16px" }} />
-                        <img src="./images/whatsapp.svg" alt="" style={{ marginRight: "16px" }} />
+                        <img src="./images/instagram.svg" alt="" style={{ marginRight: "32px" }} />
+                        <img src="./images/whatsapp.svg" alt="" style={{ marginRight: "32px" }} />
                         <Button variant="contained" color="primary" style={{ height: "50px", borderRadius: "60px" }}>
                             <Typography variant="button">
                                 Solicitar Orçamento
