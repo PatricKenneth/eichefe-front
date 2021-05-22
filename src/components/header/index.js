@@ -13,16 +13,16 @@ function Header() {
     const headerStyle = styles();
     return (
         <Grid container style={{ background: "#E8FBFF", padding: "48px 72px" }}>
-            <Grid className={headerStyle.logo} item container alignItems="center" xs={12} sm={6} md={2} lg={4} xl={4} >
+            <Grid className={headerStyle.logo} item container alignItems="center" xs={12} sm={6} md={2} lg={3} xl={3} >
                 <img src="./images/logo.svg" alt="" />
             </Grid>
             <Hidden smDown>
-                <Grid item container alignItems="center" justify="center" md={6} lg={4} xl={4} >
+                <Grid item container alignItems="center" justify="center" md={6} lg={5} xl={5} >
                     <Box style={{ display: "flex", flexDirection: "row" }}>
-                        <Typography variant="h5" style={{ marginRight: "24px" }}> Tráfego </Typography>
-                        <Typography variant="h5" style={{ marginRight: "24px" }}> Serviços </Typography>
-                        <Typography variant="h5" style={{ marginRight: "24px" }}> Resultados </Typography>
-                        <Typography variant="h5" style={{ marginRight: "24px" }}> Sobre </Typography>
+                        <Typography variant="h5" style={{ marginRight: "40px" }}> Tráfego </Typography>
+                        <Typography variant="h5" style={{ marginRight: "40px" }}> Serviços </Typography>
+                        <Typography variant="h5" style={{ marginRight: "40px" }}> Resultados </Typography>
+                        <Typography variant="h5"> Sobre </Typography>
                     </Box>
                 </Grid>
             </Hidden>

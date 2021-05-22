@@ -1,7 +1,69 @@
 import { Box, Button, Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
+import MediaCard from "../mediaCard";
+import SimpleCard from "../simpleCard";
+import SimpleModal from "../simpleModal";
+
+const contentCard_1 = `Do negócio, alinhamento de expectativas e resultados,
+                      definição de verba para anúncios e valor do meu serviço de gestão,
+                      e datas para entrega de relatórios e resultados.`;
+
+const contentCard_2 = `Da melhor estratégia para os anúncios, criação das campanhas, análise e 
+                       otimização em datas pré estabelecida, retornos no whatsapp semanais ou a cada 15 dias.`;
+
+const contentCard_3 = `Ao final do investimento mensal é entregue um relatório de desempenho
+                       para o cliente saber o que aconteceu na conta, e os melhores resultados
+                       e planejamento dos próximos passos.`;
+
+const contentModal_1 = `Esse post é para você que tem um negócio e quer obter mais clientes, vender mais, aumentar 
+                        seu delivery ou lotar sua agenda. 📈✅ Prints* (Resultado de um parceiro investido apenas 
+                        350,00 a 450,00 por mês, no seu delivery.) Há uma oportunidade fazer isso com anúncios 
+                        online, e só anunciando para a pessoa certa e no momento você consegue, quer dizer 
+                        conseguimos juntos. 😄 Pensa que apenas grandes empresas podem investir em publicidade e 
+                        propaganda ? através de campanhas patrocinadas no Facebook e Instagram, atualmente a maior 
+                        rede social do mundo e ideal para gerar demanda. 📢 (investindo pouco) Quer gerar mais negócios 
+                        para sua empresa? Entre em contato comigo no direct e vamos analisar como as redes sociais podem 
+                        ajudar seu negócio!`;
+
+const contentModal_2 = `Você pesquisa no Google ou Yahoo ? se eu fosse chutar, diria que 97% das pessoas comuns 😂😂 
+                        pesquisam no google.. como assim "comuns" ? Velho, a pesquisa no google é mais simples, rápida 
+                        e contém mais informações organizadas, é fácil usar os serviços da gigante, eles investem uma 
+                        pancada de dinheiro e um tempão melhorando a sua experiência de uso nos serviços como gmail, 
+                        google maps, youtube... enfim. E pra você que tem um Negocio Físico usar o Google Meu Negócio 
+                        é uma ferramenta incrível para se comunicar, com quem está ali no celular apressado (muitas vezes) 
+                        pesquisando sobre empresas próximas.. 🔎🏭 você pode adicionar informações de horários, se faz 
+                        reservas, avisar se estará fechado em um feriado próximo, colocar link para seu canal de 
+                        atendimento, adicionar fotos do ambiente, se tem acesso para cadeirantes, e isso tudo pra quê ? 
+                        Para que o Google liste a sua empresa nos primeiros lugares quando alguém pesquisar pelo o que você 
+                        faz. Você vai estar certificado de que é uma empresa verificada, possui boas avaliações, e 
+                        principalmente, aos responde aos clientes, e fornece informações relevantes para as pessoas. *👇🏻 
+                        Além disso, você recebe mensalmente um relatório por email com alguns dados relevantes, como quantas 
+                        pessoas viram sua empresa no google, quantas solicitaram rota, mapa de calor dessas pessoas, e como 
+                        as pessoas pesquisam pela sua empresa.`;
+
+const contentModal_3 = `Quando se você começa ter conhecimento do que o tráfego pago pode fazer em um negócio os olhos começam 
+                        a brilhar para as tantas oportunidades que ele que oferece, e realmente, hoje é uma ferramenta que pode 
+                        virar o jogo de uma empresa. Mas nada disso adianta se o básico não tiver bem feito e vou encurtar o 
+                        que é o básico aqui: Ter um bom produto, uma boa oferta e um excelente atendimento. Velho, umas das 
+                        coisas mais chatas que existe é você comprar algo e se arrepender logo depois 😡, te deixa triste e 
+                        incomodado de ter gastado aquele dinheiro que muitas vezes foi suado pra conseguir, e simplesmente você 
+                        trocou por algo que não tem utilidade nenhuma. Um outro ponto que mais presto atenção nas empresas é o 
+                        atendimento, seja ele em qualquer nível, desde do dono ao funcionário, você percebe o quão séria é ou a 
+                        importância que ela dá ao cliente, a maneira que ela atende, desde das saudações a entrega e embrulho do 
+                        produto, se for o caso, acredito que o atendimento é um ponto chave pra você se apaixonar por um empresa. 
+                        E as vezes como já aconteceu comigo 😅, do produto nem ser tão bom assim kkk quanto eu esperava, mas 
+                        mesmo assim gostei daquela empresa simplesmente pelo o seu bom atendimento... - E então, NÃO ESPERE QUE O 
+                        TRÁFEGO PAGO FAÇA UM MILAGRE PARA VOCÊ e venda um produto ruim, com uma oferta péssima e um atendimento 
+                        meia boca.`;
 
 const styles = makeStyles(( theme ) => ({
+    container: {
+        padding: "48px 72px",
+        [theme.breakpoints.only("xs")]: {
+            padding: "48px 40px",
+        },
+
+    },
     floatingDiv: {
         background: "#F7F7F7",
         width: "100%",
@@ -165,9 +227,14 @@ const styles = makeStyles(( theme ) => ({
 
 function Content() {
     const contentStyle = styles();
+    const [stateModal, setStateModal] = useState({
+        content: '',
+        title: '',
+        open: false,
+    });
     return (
         <>
-            <Grid container style={{ background: "#E8FBFF", padding: "48px 72px" }}>
+            <Grid container className={contentStyle.container} style={{ background: "#E8FBFF" }}>
                 <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
                     <Typography variant="h1" className={contentStyle.h1}>
                         Atinja seu público alvo
@@ -227,10 +294,17 @@ function Content() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={5} xl={6}>
-                    <Typography variant="h3" style={{ width: "480px", marginBottom: "16px" }}>
+                    <Typography variant="h3" style={{ width: "100%", maxWidth: "480px", marginBottom: "16px" }}>
                         O que seu negócio precisa?
                     </Typography>
-                    <Typography variant="h5" className={contentStyle.h5} style={{ textAlign: "left", width: "465px", }}>
+                    <Typography variant="h5" className={contentStyle.h5} 
+                                style={{ 
+                                    textAlign: "left", 
+                                    width: "100%", 
+                                    maxWidth: "465px", 
+                                    fontSize: "20px",
+                                    lineHeight: "28px",
+                                }}>
                         Se o conteúdo que você produz não está chegando nas pessoas e em seus clientes, 
                         consequentemente impactando nas suas vendas então a gestão de tráfego pago é uma 
                         forma prática e de resultados excelentes. Tráfego é um dos principais métodos de 
@@ -256,14 +330,14 @@ function Content() {
                         <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
                             O que é Tráfego?
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "320px" }}>
+                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
                             Tráfego é as ações que as pessoas fazem ao navegar pela internet seja em aplicativo ou 
                             em sites, as pessoas clicam para visualizar vídeos, para ver mais informações sobre um 
                             produto ou comprar algo, as plataformas como Facebook e Google monitoram esses 
                             comportamentos e gera dados, que é o tráfego.
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+                    <Grid item xs={12} sm={6} md={6} lg={4} xl={4} style={{ marginBottom: "32px" }}>
                         <Box style={{ 
                                 marginBottom: "24px", 
                                 background: "#E8FBFF", 
@@ -278,13 +352,13 @@ function Content() {
                         <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
                             Gestor de Tráfego Pago
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "320px" }}>
+                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
                             É a pessoa que vai gerenciar os investimentos em anúncios, entender os objetivos dos clientes e alinhar as 
                             expectativas. Definir os testes e organização dos públicos ideal, apresentar relatório dos resultados em 
                             datas pré estabelecidas, auxiliar nas estratégias e criação de criativos de vídeos e fotos.
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+                    <Grid item xs={12} sm={6} md={6} lg={4} xl={4} style={{ marginBottom: "32px" }}>
                         <Box style={{ 
                                 marginBottom: "24px", 
                                 background: "#E8FBFF", 
@@ -299,7 +373,7 @@ function Content() {
                         <Typography variant="h5" style={{ marginBottom: "24px", textAlign: "left", fontWeight: "bold", color: "#242424" }}>
                             Benefícios
                         </Typography>
-                        <Typography variant="h5" style={{ textAlign: "left", width: "320px" }}>
+                        <Typography variant="h5" style={{ textAlign: "left", width: "100%", maxWidth: "320px" }}>
                             Ganho de visibilidade e presença digital. Atração de audiência para seu negócio. Segmentação e 
                             personalização de anúncios para o público ideal.
                         </Typography>
@@ -322,7 +396,7 @@ function Content() {
                     </Typography>
                 </Grid>
                 <Grid item container spacing={2} xs={12} sm={12} md={12} lg={6} xl={6}>
-                    <Grid item container xs={6} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
+                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_22.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -338,7 +412,7 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item container xs={6} sm={6} md={6} lg={6} xl={6}>
+                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_23.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -354,7 +428,7 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item container xs={6} sm={6} md={6} lg={6} xl={6}>
+                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_24.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -370,7 +444,7 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item container xs={6} sm={6} md={6} lg={6} xl={6}>
+                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_25.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -386,6 +460,73 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
+                </Grid>
+            </Grid>
+            <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "128px 40px 72px 40px", }}>
+                <Grid item style={{ marginBottom: "80px" }}>
+                    <Typography variant="h3" style={{ textAlign: "center", marginBottom: "40px", maxWidth: "491px", width: "100%" }}>
+                        Como funciona meu serviço ?
+                    </Typography>
+                </Grid>
+                <Grid item container spacing={4} style={{ marginBottom: "88px" }}>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <SimpleCard image="./images/meeting.svg" title="Reunião para entendimento" content={contentCard_1} numberCard={1} />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <SimpleCard image="./images/study.svg" title="Estudo e criação" content={contentCard_2} numberCard={2} />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <SimpleCard image="./images/report.svg" title="Entrega de Relatório" content={contentCard_3} numberCard={3} />
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" color="primary" 
+                            style={{ 
+                                height: "64px", 
+                                width: "281px",
+                                borderRadius: "6px",
+                            }}>
+                        <Typography variant="button" style={{ fontSize: "20px", fontWeight: "900" }}>
+                            Entrar em contato
+                        </Typography>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "176px 40px 72px 40px", }}>
+                <Grid item style={{ marginBottom: "80px" }}>
+                    <Typography variant="h3" style={{ textAlign: "center", marginBottom: "8px", width: "100%" }}>
+                        Dicas do Chefe
+                    </Typography>
+                    <Typography variant="h5" style={{ textAlign: "center", width: "100%" }}>
+                        Tráfego é um jogo de médio e longo prazo
+                    </Typography>
+                </Grid>
+                <Grid item container spacing={4}>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <MediaCard 
+                            image="./images/capa_artigo1.png" 
+                            title="Invista em Mídia Paga e Promova seu Negócio"
+                            setStateModal={setStateModal} 
+                            contentModal={contentModal_1}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <MediaCard 
+                            image="./images/capa_artigo2.png" 
+                            title="O básico sobre o Google Meu Negócio para destacar sua empresa nos resultados de pesquisa"
+                            setStateModal={setStateModal}
+                            contentModal={contentModal_2}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <MediaCard 
+                            image="./images/capa_artigo3.png" 
+                            title="Não espere isso do tráfego pago"
+                            setStateModal={setStateModal}
+                            contentModal={contentModal_3}
+                        />
+                    </Grid>
+                    <SimpleModal stateModal={stateModal} setStateModal={setStateModal} />
                 </Grid>
             </Grid>
         </>
