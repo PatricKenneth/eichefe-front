@@ -36,6 +36,20 @@ const theme = createMuiTheme({
       letterSpacing: "0em",
       color: "#27AED8",
     },
+    subtitle2: {
+      fontSize: "36px",
+      fontStyle: "normal",
+      fontWeight: "900",
+      letterSpacing: "0em",
+      color: "#27AED8",
+    },
+    h4: {
+      fontSize: "24px",
+      fontStyle: "normal",
+      fontWeight: "400",
+      letterSpacing: "0em",
+      color: "#474747",
+    },
     h5: {
       fontSize: "22px",
       fontStyle: "normal",

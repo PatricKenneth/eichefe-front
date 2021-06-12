@@ -131,7 +131,6 @@ const styles = makeStyles(( theme ) => ({
         },
     },
     floatingImg11: {
-        position: "relative",
         top: "10px",
         left: "176px",
         [theme.breakpoints.only("md")]: {
@@ -154,7 +153,6 @@ const styles = makeStyles(( theme ) => ({
         },
     },
     floatingImg12: {
-        position: "relative",
         top: "210px",
         left: "69px",
         [theme.breakpoints.only("md")]: {
@@ -177,7 +175,6 @@ const styles = makeStyles(( theme ) => ({
         },
     },
     floatingImg13: {
-        position: "relative",
         top: "-5px",
         left: "-50px",
         [theme.breakpoints.only("md")]: {
@@ -192,12 +189,11 @@ const styles = makeStyles(( theme ) => ({
             top: "-58px",
             left: "24px",
         },
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.only("xs")]: {
             width: "86px",
             height: "86px",
-            top: "-88px",
-            left: "146px",
-        },
+            marginRight: "-24px",
+        }
     },
     rectangle_74: {
         height: "510px",
@@ -206,6 +202,12 @@ const styles = makeStyles(( theme ) => ({
             width: "262px",
             marginTop: "54px",
         },
+    },
+    divBoss: {
+        marginLeft: "auto",
+        [theme.breakpoints.down("md")]: {
+            margin: "unset",
+        }
     }
 }));
 
@@ -271,10 +273,10 @@ function Content() {
                     </Box>
                 </Hidden>
                 <Grid item xs={12} sm={12} md={6} lg={7} xl={6}>
-                    <Box style={{ height: "340px" }}>
-                        <img className={contentStyle.floatingImg11} src="./images/rectangle_11.svg" alt="" />
-                        <img className={contentStyle.floatingImg12} src="./images/rectangle_12.svg" alt="" />
-                        <img className={contentStyle.floatingImg13} src="./images/rectangle_13.svg" alt="" />
+                    <Box style={{ height: "340px", }}>
+                        <img className={contentStyle.floatingImg11} src="./images/rectangle_11.svg" alt="" style={{ position: "relative" }} />
+                        <img className={contentStyle.floatingImg12} src="./images/rectangle_12.svg" alt="" style={{ position: "relative" }} />
+                        <img className={contentStyle.floatingImg13} src="./images/rectangle_13.svg" alt="" style={{ position: "relative" }} />
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={5} xl={6}>
@@ -504,6 +506,167 @@ function Content() {
                         />
                     </Grid>
                     <SimpleModal stateModal={stateModal} setStateModal={setStateModal} />
+                </Grid>
+            </Grid>
+            <Hidden xsDown>
+                <Grid container style={{ background: "#F7F7F7", padding: "176px 72px 72px 72px", }}>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Nome do Cliente
+                        </Typography>
+                        <Typography variant="h4">
+                            Valores Gerenciados em uma única Conta
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            style={{ 
+                                padding: "40px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "909px", 
+                                maxHeight: "504px",
+                            }}>
+                            <img src="./images/rectangle_77.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            style={{ 
+                                margin: "auto", 
+                                padding: "40px 24px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "288px", 
+                                height: "504px" 
+                            }}>
+                            <img src="./images/rectangle_79.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Nome do Cliente
+                        </Typography>
+                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
+                            Campanha para Delivery de Comida, para um parceiro do setor dos bares e restaurantes.
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            style={{ 
+                                padding: "40px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "909px", 
+                                maxHeight: "504px",
+                                display: "flex",
+                            }}>
+                            <img src="./images/rectangle_80.svg" alt="" style={{ margin: "auto", width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            style={{ 
+                                margin: "auto", 
+                                padding: "40px 24px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "288px", 
+                                height: "504px",
+                            }}>
+                            <img src="./images/rectangle_81.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Nome do Cliente
+                        </Typography>
+                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
+                            Campanha para uma parceira da odontologia, para agendamentos em seu Whatsappp.
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            style={{ 
+                                padding: "40px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "909px", 
+                                maxHeight: "504px",
+                                display: "flex",
+                            }}>
+                            <img src="./images/rectangle_82.svg" alt="" style={{ margin: "auto", width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            style={{ 
+                                margin: "auto", 
+                                padding: "40px 24px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "288px", 
+                                height: "504px",
+                            }}>
+                            <img src="./images/rectangle_83.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Nome do Cliente
+                        </Typography>
+                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
+                            Campanha de captação de leads, para um parceiro com mentoria para empresários e donos de negócios
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            style={{ 
+                                padding: "40px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "909px", 
+                                maxHeight: "504px",
+                                display: "flex",
+                            }}>
+                            <img src="./images/rectangle_84.svg" alt="" style={{ margin: "auto", width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            style={{ 
+                                margin: "auto", 
+                                padding: "40px 24px", 
+                                background: "#E8FBFF", 
+                                maxWidth: "288px", 
+                                height: "504px",
+                            }}>
+                            <img src="./images/rectangle_85.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Hidden>
+            <Grid container style={{ background: "#E8FBFF", padding: "176px 72px 232px 72px", }}>
+                <Grid item style={{ maxWidth: "488px" }}>
+                    <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "32px" }}>
+                        Quem sou eu?
+                    </Typography>
+                    <Typography style={{ lineHeight: "28px", marginBottom: "40px", }}>
+                        Formado em Sistemas de Informação pela FJN - Faculdade de Juazeiro do Norte, comecei a me encantar 
+                        por Marketing em uma única cadeira no curso, logo então paguei estágio em uma agência de marketing 
+                        em 2019, daí trabalhei com várias ferramentas e foi onde comecei a fazer meus primeiros anúncios 
+                        no facebook ads. Em maio de 2020 resolvi prestar serviço de tráfego pago para negócios locais como 
+                        restaurantes, lojas, oficinas, bares, clínicas médicas, profissionais liberais e criadores de 
+                        conteúdo... Consigo tanto promover seu negócio com anúncios profissionais como ajudar a desenvolver 
+                        estratégias digitais para chegar no seu objetivo.
+                    </Typography>
+                    <Box style={{
+                        marginBottom: "40px",
+                        borderRadius: "8px",
+                        background: "#002643",
+                        padding: "32px 48px 32px 48px",
+                    }}>
+                        <Typography style={{
+                            fontSize: "14px",
+                            fontStyle: "italic",
+                            fontWeight: "600",
+                            lineHeight: "18px",
+                            letterSpacing: "0em",
+                            textAlign: "left",
+                            color: "#F7F7F7",
+                        }}>
+                            “As redes sociais se tornou o principal canal para empresas expressar diariamente sua identidade e 
+                            filosofia, com potencial de estar conectado com seu cliente 24hrs por dia aprendendo mais sobre ele”
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid item className={contentStyle.divBoss} style={{ maxWidth: "595px", maxHeight: "691px", }}>
+                    <img src="./images/boss.svg" alt="" style={{ width: "100%" }} />
                 </Grid>
             </Grid>
         </>
