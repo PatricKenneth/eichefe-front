@@ -283,14 +283,19 @@ function Content() {
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ width: "100%", maxWidth: "480px", marginBottom: "16px", }}>
                         O que seu negócio precisa?
                     </Typography>
-                    <Typography className={contentStyle.body1} style={{ width: "100%", maxWidth: "440px", lineHeight: "28px",  }}>
+                    <Typography className={contentStyle.body1} style={{ width: "100%", maxWidth: "440px", lineHeight: "28px", marginBottom: "16px" }}>
                         Se o conteúdo que você produz não está chegando nas pessoas e em seus clientes, 
                         consequentemente impactando nas suas vendas então a gestão de tráfego pago é uma 
-                        forma prática e de resultados excelentes. Tráfego é um dos principais métodos de 
-                        divulgação e escala a serem utilizado em uma estratégia de marketing digital. 
+                        forma prática e de resultados excelentes.
+                    </Typography>
+                    <Typography className={contentStyle.body1} style={{ width: "100%", maxWidth: "440px", lineHeight: "28px", marginBottom: "16px" }}>
+                        Tráfego é um dos principais métodos de divulgação e escala a serem utilizado em 
+                        uma estratégia de marketing digital.
+                    </Typography>
+                    <Typography className={contentStyle.body1} style={{ width: "100%", maxWidth: "440px", lineHeight: "28px", marginBottom: "16px" }}>
                         Devido a diminuição do alcance orgânico pelas plataformas (Facebook e Instagram), 
-                        torna-se indispensável o investimento em patrocinados por qualquer empresa que veicule 
-                        produtos e faça vendas online.
+                        torna-se indispensável o investimento em patrocinados por qualquer empresa que 
+                        veicule produtos e faça vendas online.
                     </Typography>
                 </Grid>
                 <Grid item container xs={12} sm={12} md={12} lg={12} xl={12} style={{ marginTop: "136px" }}>
@@ -364,18 +369,22 @@ function Content() {
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "40px", maxWidth: "386px", width: "100%" }}>
                         Para quem é o tráfego pago?
                     </Typography>
-                    <Typography style={{ maxWidth: "499px", width: "100%" }}>
+                    <Typography style={{ maxWidth: "499px", width: "100%", marginBottom: "16px" }}>
                         Para todo criador de conteúdo ou para quem vende algum produto e quer escalar 
-                        sua visibilidade e vendas. Seja em site, perfil do Instagram, página de vendas e etc… 
+                        sua visibilidade e vendas. Seja em site, perfil do Instagram, página de vendas e etc…
+                    </Typography>
+                    <Typography style={{ maxWidth: "499px", width: "100%", marginBottom: "16px" }}>
                         É ideal para quem está iniciando, pois não exige grandes investimentos iniciais como 
-                        lanchonetes, restaurantes e pizzarias que tem uma margem de lucro pequena. Serve 
-                        também para levar pessoas ao seu estabelecimento com a inauguração do seu negócio, 
+                        lanchonetes, restaurantes e pizzarias que tem uma margem de lucro pequena. 
+                    </Typography>
+                    <Typography style={{ maxWidth: "499px", width: "100%", marginBottom: "16px" }}>
+                        Serve também para levar pessoas ao seu estabelecimento com a inauguração do seu negócio, 
                         crie campanhas para cada momento do seu negócio. Defina onde está seu público ideal e 
                         utilize para atração no facebook, instagram ou google
                     </Typography>
                 </Grid>
-                <Grid item container spacing={2} xs={12} sm={12} md={12} lg={6} xl={6}>
-                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
+                <Grid item container xs={12} sm={12} md={12} lg={6} xl={6}>
+                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_22.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -391,7 +400,7 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
+                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_23.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -407,7 +416,7 @@ function Content() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
+                    <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{ marginBottom: "48px" }}>
                         <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_24.svg)" }}>
                             <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
                                  style={{ background: "#0085E8", 
@@ -419,22 +428,6 @@ function Content() {
                                         }}>
                                 <Typography variant="button" style={{ color: "#F7F7F7"  }}>
                                     Lojas
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item container xs={12} sm={6} md={6} lg={6} xl={6}>
-                        <Box width="100%" height="240px" maxWidth="282px" style={{ backgroundImage: "url(./images/rectangle_25.svg)" }}>
-                            <Box width="100%" height="64px" maxWidth="282px" borderRadius="10px" 
-                                 style={{ background: "#0085E8", 
-                                          display: "flex", 
-                                          justifyContent: "center", 
-                                          alignItems: "center",
-                                          position: "relative",
-                                          top: "190px"
-                                        }}>
-                                <Typography variant="button" style={{ color: "#F7F7F7"  }}>
-                                    Bares
                                 </Typography>
                             </Box>
                         </Box>
@@ -512,21 +505,21 @@ function Content() {
                 <Grid container style={{ background: "#F7F7F7", padding: "176px 72px 72px 72px", }}>
                     <Grid item style={{ marginBottom: "24px"}}>
                         <Typography variant="subtitle2">
-                            Nome do Cliente
+                            Dra. Alana Mirely
                         </Typography>
                         <Typography variant="h4">
-                            Valores Gerenciados em uma única Conta
+                            Campanha para uma parceira da odontologia, para agendamentos em seu Whatsapp.
                         </Typography>
                     </Grid>
                     <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
-                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                        <Grid item container alignContent="center" xs={12} sm={12} md={12} lg={9} xl={10} 
                             style={{ 
                                 padding: "40px", 
                                 background: "#E8FBFF", 
                                 maxWidth: "909px", 
                                 maxHeight: "504px",
                             }}>
-                            <img src="./images/rectangle_77.svg" alt="" style={{ width: "100%" }} />
+                            <img src="./images/rectangle_77.jpeg" alt="" style={{ width: "100%" }} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
                             style={{ 
@@ -541,10 +534,10 @@ function Content() {
                     </Grid>
                     <Grid item style={{ marginBottom: "24px"}}>
                         <Typography variant="subtitle2">
-                            Nome do Cliente
+                            Dona Costela Delivery
                         </Typography>
                         <Typography variant="h4" style={{ maxWidth: "595px" }}>
-                            Campanha para Delivery de Comida, para um parceiro do setor dos bares e restaurantes.
+                            Parceira de um restaurante delivery em Brasília.
                         </Typography>
                     </Grid>
                     <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
@@ -556,7 +549,7 @@ function Content() {
                                 maxHeight: "504px",
                                 display: "flex",
                             }}>
-                            <img src="./images/rectangle_80.svg" alt="" style={{ margin: "auto", width: "100%" }} />
+                            <img src="./images/rectangle_80.jpeg" alt="" style={{ margin: "auto", width: "100%" }} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
                             style={{ 
@@ -566,15 +559,15 @@ function Content() {
                                 maxWidth: "288px", 
                                 height: "504px",
                             }}>
-                            <img src="./images/rectangle_81.svg" alt="" style={{ width: "100%" }} />
+                            <img src="./images/rectangle_81.jpeg" alt="" style={{ width: "100%" }} />
                         </Grid>
                     </Grid>
                     <Grid item style={{ marginBottom: "24px"}}>
                         <Typography variant="subtitle2">
-                            Nome do Cliente
+                            Rodrigo Sousa Personal
                         </Typography>
                         <Typography variant="h4" style={{ maxWidth: "595px" }}>
-                            Campanha para uma parceira da odontologia, para agendamentos em seu Whatsappp.
+                            Campanha de inscrições abertas, parceiro de um projeto de treinamento físico para emagrecimento
                         </Typography>
                     </Grid>
                     <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
@@ -586,7 +579,7 @@ function Content() {
                                 maxHeight: "504px",
                                 display: "flex",
                             }}>
-                            <img src="./images/rectangle_82.svg" alt="" style={{ margin: "auto", width: "100%" }} />
+                            <img src="./images/rectangle_82.jpeg" alt="" style={{ margin: "auto", width: "100%" }} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
                             style={{ 
@@ -596,37 +589,7 @@ function Content() {
                                 maxWidth: "288px", 
                                 height: "504px",
                             }}>
-                            <img src="./images/rectangle_83.svg" alt="" style={{ width: "100%" }} />
-                        </Grid>
-                    </Grid>
-                    <Grid item style={{ marginBottom: "24px"}}>
-                        <Typography variant="subtitle2">
-                            Nome do Cliente
-                        </Typography>
-                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
-                            Campanha de captação de leads, para um parceiro com mentoria para empresários e donos de negócios
-                        </Typography>
-                    </Grid>
-                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
-                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
-                            style={{ 
-                                padding: "40px", 
-                                background: "#E8FBFF", 
-                                maxWidth: "909px", 
-                                maxHeight: "504px",
-                                display: "flex",
-                            }}>
-                            <img src="./images/rectangle_84.svg" alt="" style={{ margin: "auto", width: "100%" }} />
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
-                            style={{ 
-                                margin: "auto", 
-                                padding: "40px 24px", 
-                                background: "#E8FBFF", 
-                                maxWidth: "288px", 
-                                height: "504px",
-                            }}>
-                            <img src="./images/rectangle_85.svg" alt="" style={{ width: "100%" }} />
+                            <img src="./images/rectangle_83.jpeg" alt="" style={{ width: "100%" }} />
                         </Grid>
                     </Grid>
                 </Grid>

@@ -32,6 +32,7 @@ const styles = makeStyles(theme => ({
         [theme.breakpoints.down("xs")]: {
             fontSize: "14px",
             lineHeight: "28px",
+            marginBottom: "64px"
         }
     }
 }))
