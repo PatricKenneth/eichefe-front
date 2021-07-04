@@ -1,6 +1,10 @@
 import { Button, Hidden, makeStyles } from "@material-ui/core";
 import { Box, Grid, Typography, TextField } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
+import ReactInputMask from "react-input-mask";
+import { ApiTelegram } from "../../resources/services/sendMessage";
+import ButtonLoading from "../buttonLoading";
+import SimpleAlert from "../simpleAlert";
 
 const styles = makeStyles(theme => ({
     boxForm: {
@@ -37,10 +41,54 @@ const styles = makeStyles(theme => ({
     }
 }))
 
+const  INITIAL_SEND_MESSAGE = {
+    name: "",
+    whats: "",
+    email: "",
+    description: "",
+}
+
 function Footer() {
     const classes = styles();
+    const [sendMessage, setSendMessage] = useState(INITIAL_SEND_MESSAGE);
+    const [loading, setLoading] = React.useState(false);
+    const [alert, setAlert] = useState({
+        open: false,
+        severity: "", 
+        content: "",
+    })
+
+    async function onFinish() {
+        const { name, whats, email } = sendMessage;
+        try {
+            if (name && whats && email) {
+                setLoading(true);
+                const api = new ApiTelegram();
+                const response = await api.sendMessage(sendMessage);
+                const { data } = response;
+                if( data.ok ) {
+                    setAlert({
+                        open: true,
+                        severity: "success",
+                        content: "Sua mensagem foi enviada. Dentro de 24hrs entro em contato.",
+                    });
+                    setSendMessage(INITIAL_SEND_MESSAGE);
+                }
+            }else {
+                setAlert({
+                    open: true,
+                    severity: "warning",
+                    content: "Nome, Whats e E-mail são obrigatótios!",
+                });
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        setLoading(false);
+    }
+
     return (
-        <Grid container justify="center" style={{ background: "#0085E8", padding: "144px 64px 64px 64px" }}>
+        <Grid container justify="center" style={{ background: "#0085E8", padding: "144px 64px 64px 64px" }} id="Footer">
             <Grid item container>
                 <Grid item container justify="center" xs={12} sm={12} md={6} lg={6} xl={6} style={{ marginBottom: "64px" }}>
                     <Typography variant="subtitle1" className={classes.subtitle1}>
@@ -58,9 +106,18 @@ function Footer() {
                     <Hidden only="xs">
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
                             <TextField  
-                                label="Seu nome" 
+                                label="Seu nome"
+                                name="name"
+                                required
                                 variant="filled" 
                                 fullWidth
+                                value={sendMessage.name}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        name: event.target.value,
+                                    }));
+                                }}
                                 style={{ 
                                     margin: "8px 24px 8px 8px",
                                     maxWidth: "232px",
@@ -76,31 +133,56 @@ function Footer() {
                                     }
                                 }}
                             />
-                            <TextField  
-                                label="Seu whats" 
-                                variant="filled" 
-                                fullWidth
-                                style={{ 
-                                    margin: "8px",
-                                    maxWidth: "232px",
-                                }}
-                                inputProps={{
-                                    style: {
-                                        background: "#E8FBFF",
-                                    },
-                                }}
-                                InputLabelProps={{
-                                    style: {
-                                        color: "#BDBDBD",
-                                    }
-                                }}
-                            />
+                            <ReactInputMask
+                            mask="(99)9 9999-9999"
+                            value={sendMessage.whats}
+                            onChange={(event) => {
+                                setSendMessage( prevSendMessage => ({
+                                    ...prevSendMessage,
+                                    whats: event.target.value.replaceAll("_", ""),
+                                }));
+                            }}
+                            required
+                        >
+                            {(props) => 
+                                <TextField  
+                                    { ...props }
+                                    label="Seu whats" 
+                                    variant="filled" 
+                                    name="whats"
+                                    fullWidth
+                                    style={{ 
+                                        margin: "8px",
+                                        maxWidth: "232px",
+                                    }}
+                                    inputProps={{
+                                        style: {
+                                            background: "#E8FBFF",
+                                        },
+                                    }}
+                                    InputLabelProps={{
+                                        style: {
+                                            color: "#BDBDBD",
+                                        }
+                                    }}
+                                />
+                            }
+                        </ReactInputMask>
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
                             <TextField  
                                 label="Seu email" 
                                 variant="filled" 
                                 fullWidth
+                                name="email"
+                                required
+                                value={sendMessage.email}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        email: event.target.value,
+                                    }))
+                                }}
                                 style={{ 
                                     margin: "8px",
                                     maxWidth: "496px",
@@ -124,6 +206,15 @@ function Footer() {
                                 fullWidth
                                 multiline
                                 rows={8}
+                                required
+                                name="description"
+                                value={sendMessage.description}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        description: event.target.value,
+                                    }))
+                                }}
                                 style={{ 
                                     margin: "8px",
                                     maxWidth: "496px",
@@ -146,7 +237,7 @@ function Footer() {
                             />
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "flex-end", maxWidth: "488px" }}>
-                            <Button 
+                            <ButtonLoading 
                                 variant="contained" 
                                 color="primary"
                                 style={{ 
@@ -155,6 +246,8 @@ function Footer() {
                                     borderRadius: "8px",
                                     background: "#002643",
                                 }}
+                                onClick={onFinish}
+                                loading={loading}
                             >
                                 <Typography 
                                     variant="button" 
@@ -166,7 +259,7 @@ function Footer() {
                                 >
                                     Enviar
                                 </Typography>
-                            </Button>
+                            </ButtonLoading>
                         </Box>
                     </Hidden>
                     <Hidden smUp>
@@ -267,6 +360,7 @@ function Footer() {
                                     borderRadius: "8px",
                                     background: "#002643",
                                 }}
+                                onClick={() => onFinish()}
                             >
                                 <Typography 
                                     variant="button" 
@@ -284,10 +378,18 @@ function Footer() {
                 </Grid>
             </Grid>
             <Grid item>
-                <Typography style={{ color: "#FFFFFF" }}>
+                <Typography style={{ color: "#FFFFFF", textAlign: "center" }}>
                     Rodrigues Marketing Digital | CNPJ - 36.490.397/0001-94
                 </Typography>
             </Grid>
+            { alert.open &&
+                <SimpleAlert 
+                    severity={alert.severity} 
+                    content={alert.content}
+                    open={alert.open}
+                    setAlert={setAlert}
+                />
+            }
         </Grid>
     )
 }

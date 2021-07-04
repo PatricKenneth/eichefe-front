@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
 import React, { useState } from "react";
+import FloatingButton from "../floatingButton";
 import MediaCard from "../mediaCard";
 import SimpleCard from "../simpleCard";
 import SimpleModal from "../simpleModal";
@@ -229,12 +230,12 @@ function Content() {
                         Use o poder do Tráfego Pago e leve seu 
                         faturamento para o próximo nível.
                     </Typography>
-                    <Button variant="contained" color="primary" className={contentStyle.buttonDark}>
+                    <Button variant="contained" color="primary" className={contentStyle.buttonDark} href="#Services">
                         <Typography variant="button">
                             Para quem é o tráfego pago?
                         </Typography>
                     </Button>
-                    <Button variant="outlined" color="primary" className={contentStyle.buttonAbout}>
+                    <Button variant="outlined" color="primary" className={contentStyle.buttonAbout} href="#Boss">
                         <Typography variant="button" style={{ color: "#0085E8" }}>
                             Sobre
                         </Typography>
@@ -279,7 +280,7 @@ function Content() {
                         <img className={contentStyle.floatingImg13} src="./images/rectangle_13.svg" alt="" style={{ position: "relative" }} />
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={5} xl={6}>
+                <Grid item xs={12} sm={12} md={6} lg={5} xl={6} id="Traffic">
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ width: "100%", maxWidth: "480px", marginBottom: "16px", }}>
                         O que seu negócio precisa?
                     </Typography>
@@ -365,7 +366,7 @@ function Content() {
                 </Grid>
             </Grid>
             <Grid container justify="center" alignItems="center" style={{ background: "#F7F7F7", padding: "176px 40px 72px 40px", }}>
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={6} style={{ marginBottom: "40px" }}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6} style={{ marginBottom: "40px" }} id="Services">
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "40px", maxWidth: "386px", width: "100%" }}>
                         Para quem é o tráfego pago?
                     </Typography>
@@ -502,7 +503,7 @@ function Content() {
                 </Grid>
             </Grid>
             <Hidden xsDown>
-                <Grid container style={{ background: "#F7F7F7", padding: "176px 72px 72px 72px", }}>
+                <Grid container style={{ background: "#F7F7F7", padding: "176px 72px 72px 72px", }} id="Results">
                     <Grid item style={{ marginBottom: "24px"}}>
                         <Typography variant="subtitle2">
                             Dra. Alana Mirely
@@ -594,7 +595,7 @@ function Content() {
                     </Grid>
                 </Grid>
             </Hidden>
-            <Grid container style={{ background: "#E8FBFF", padding: "176px 72px 232px 72px", }}>
+            <Grid container style={{ background: "#E8FBFF", padding: "176px 72px 232px 72px" }} id="Boss">
                 <Grid item style={{ maxWidth: "488px" }}>
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "32px" }}>
                         Quem sou eu?
@@ -632,6 +633,9 @@ function Content() {
                     <img src="./images/boss.svg" alt="" style={{ width: "100%" }} />
                 </Grid>
             </Grid>
+            <Hidden smDown>
+                <FloatingButton />
+            </Hidden>
         </>
     )
 }
