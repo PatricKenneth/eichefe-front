@@ -38,6 +38,13 @@ const styles = makeStyles(theme => ({
             lineHeight: "28px",
             marginBottom: "64px"
         }
+    },
+    a: {
+        "&:hover": {
+            color: "#3d5afe",
+        },
+        textDecoration: "none",
+        color: "#474747",
     }
 }))
 
@@ -134,40 +141,40 @@ function Footer() {
                                 }}
                             />
                             <ReactInputMask
-                            mask="(99)9 9999-9999"
-                            value={sendMessage.whats}
-                            onChange={(event) => {
-                                setSendMessage( prevSendMessage => ({
-                                    ...prevSendMessage,
-                                    whats: event.target.value.replaceAll("_", ""),
-                                }));
-                            }}
-                            required
-                        >
-                            {(props) => 
-                                <TextField  
-                                    { ...props }
-                                    label="Seu whats" 
-                                    variant="filled" 
-                                    name="whats"
-                                    fullWidth
-                                    style={{ 
-                                        margin: "8px",
-                                        maxWidth: "232px",
-                                    }}
-                                    inputProps={{
-                                        style: {
-                                            background: "#E8FBFF",
-                                        },
-                                    }}
-                                    InputLabelProps={{
-                                        style: {
-                                            color: "#BDBDBD",
-                                        }
-                                    }}
-                                />
-                            }
-                        </ReactInputMask>
+                                mask="(99)9 9999-9999"
+                                value={sendMessage.whats}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        whats: event.target.value.replaceAll("_", ""),
+                                    }));
+                                }}
+                                required
+                            >
+                                {(props) => 
+                                    <TextField  
+                                        { ...props }
+                                        label="Seu whats" 
+                                        variant="filled" 
+                                        name="whats"
+                                        fullWidth
+                                        style={{ 
+                                            margin: "8px",
+                                            maxWidth: "232px",
+                                        }}
+                                        inputProps={{
+                                            style: {
+                                                background: "#E8FBFF",
+                                            },
+                                        }}
+                                        InputLabelProps={{
+                                            style: {
+                                                color: "#BDBDBD",
+                                            }
+                                        }}
+                                    />
+                                }
+                            </ReactInputMask>
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
                             <TextField  
@@ -265,11 +272,20 @@ function Footer() {
                     <Hidden smUp>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
                             <TextField  
-                                label="Seu nome" 
+                                label="Seu nome"
+                                name="name"
+                                required
                                 variant="filled" 
                                 fullWidth
+                                value={sendMessage.name}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        name: event.target.value,
+                                    }));
+                                }}
                                 style={{ 
-                                    margin: "8px",
+                                    margin: "8px 8px 8px 8px",
                                 }}
                                 inputProps={{
                                     style: {
@@ -284,32 +300,59 @@ function Footer() {
                             />
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
-                            <TextField  
-                                label="Seu whats" 
-                                variant="filled" 
-                                fullWidth
-                                style={{ 
-                                    margin: "8px",
+                            <ReactInputMask
+                                mask="(99)9 9999-9999"
+                                value={sendMessage.whats}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        whats: event.target.value.replaceAll("_", ""),
+                                    }));
                                 }}
-                                inputProps={{
-                                    style: {
-                                        background: "#E8FBFF",
-                                    },
-                                }}
-                                InputLabelProps={{
-                                    style: {
-                                        color: "#BDBDBD",
-                                    }
-                                }}
-                            />
+                                required
+                            >
+                                {(props) => 
+                                    <TextField  
+                                        { ...props }
+                                        label="Seu whats" 
+                                        variant="filled" 
+                                        name="whats"
+                                        fullWidth
+                                        style={{ 
+                                            margin: "8px",
+                                            maxWidth: "232px",
+                                        }}
+                                        inputProps={{
+                                            style: {
+                                                background: "#E8FBFF",
+                                            },
+                                        }}
+                                        InputLabelProps={{
+                                            style: {
+                                                color: "#BDBDBD",
+                                            }
+                                        }}
+                                    />
+                                }
+                            </ReactInputMask>
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
                             <TextField  
                                 label="Seu email" 
                                 variant="filled" 
                                 fullWidth
+                                name="email"
+                                required
+                                value={sendMessage.email}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        email: event.target.value,
+                                    }))
+                                }}
                                 style={{ 
                                     margin: "8px",
+                                    maxWidth: "496px",
                                 }}
                                 inputProps={{
                                     style: {
@@ -330,8 +373,18 @@ function Footer() {
                                 fullWidth
                                 multiline
                                 rows={8}
+                                required
+                                name="description"
+                                value={sendMessage.description}
+                                onChange={(event) => {
+                                    setSendMessage( prevSendMessage => ({
+                                        ...prevSendMessage,
+                                        description: event.target.value,
+                                    }))
+                                }}
                                 style={{ 
                                     margin: "8px",
+                                    maxWidth: "496px",
                                 }}
                                 inputProps={{
                                     style: {
@@ -351,7 +404,7 @@ function Footer() {
                             />
                         </Box>
                         <Box style={{ display: "flex", justifyContent: "center", maxWidth: "496px" }}>
-                            <Button 
+                            <ButtonLoading 
                                 variant="contained" 
                                 color="primary"
                                 style={{ 
@@ -360,7 +413,8 @@ function Footer() {
                                     borderRadius: "8px",
                                     background: "#002643",
                                 }}
-                                onClick={() => onFinish()}
+                                onClick={onFinish}
+                                loading={loading}
                             >
                                 <Typography 
                                     variant="button" 
@@ -372,7 +426,7 @@ function Footer() {
                                 >
                                     Enviar
                                 </Typography>
-                            </Button>
+                            </ButtonLoading>
                         </Box>
                     </Hidden>
                 </Grid>
@@ -380,6 +434,15 @@ function Footer() {
             <Grid item>
                 <Typography style={{ color: "#FFFFFF", textAlign: "center" }}>
                     Rodrigues Marketing Digital | CNPJ - 36.490.397/0001-94
+                </Typography>
+                <Typography style={{ color: "#FFFFFF", textAlign: "center" }}>
+                    Desenvolvido por Patric Kenneth R Silva | <a className={classes.a} 
+                                                                 rel="noreferrer" 
+                                                                 target="_blank" 
+                                                                 href="https://api.whatsapp.com/send?phone=5588988414531&text=Oi%2C%20quero%20solicitar%20um%20orçamento%20de%20landingpage" 
+                                                                 >
+                                                                    (88)9 8841-4531
+                                                                </a> 
                 </Typography>
             </Grid>
             { alert.open &&

@@ -61,7 +61,7 @@ const styles = makeStyles(( theme ) => ({
     container: {
         padding: "48px 72px",
         [theme.breakpoints.only("xs")]: {
-            padding: "48px 40px",
+            padding: "16px 40px 48px 40px",
         },
 
     },
@@ -77,11 +77,21 @@ const styles = makeStyles(( theme ) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        [theme.breakpoints.only("xs")]: {
+            top: "-64px",
+            maxWidth: "353px",
+            height: "70px",
+        }
     },
     floatingDivImgs: {
         marginRight: "48px",
         [theme.breakpoints.only("sm")]: {
             marginRight: "8px",
+        },
+        [theme.breakpoints.only("xs")]: {
+            marginRight: "8px",
+            width: "35px",
+            height: "35px",
         }
     },
     floatingContainer: {
@@ -204,12 +214,79 @@ const styles = makeStyles(( theme ) => ({
             marginTop: "54px",
         },
     },
-    divBoss: {
+    containerResults: {
+        background: "#F7F7F7", 
+        padding: "176px 72px 72px 72px", 
+        [theme.breakpoints.only("xs")]: {
+            padding: "88px 40px 72px 40px", 
+        },
+    },
+    divResultImg_77: {
+        padding: "40px", 
+        background: "#E8FBFF", 
+        maxWidth: "909px", 
+        maxHeight: "504px",
+        [theme.breakpoints.only("xs")]: {
+            padding: "8px", 
+            marginBottom: "24px"
+        },
+    },
+    divResultImg_79: {
+        margin: "auto", 
+        padding: "40px 24px", 
+        background: "#E8FBFF", 
+        maxWidth: "288px", 
+        height: "504px",
+    },
+    divResultImg_80: {
+        padding: "40px", 
+        background: "#E8FBFF", 
+        maxWidth: "909px", 
+        maxHeight: "504px",
+        display: "flex",
+        [theme.breakpoints.only("xs")]: {
+            padding: "8px", 
+            marginBottom: "24px"
+        },
+    },
+    divResultImg_81: {
+        margin: "auto", 
+        padding: "40px 24px", 
+        background: "#E8FBFF", 
+        maxWidth: "288px", 
+        height: "504px",
+    },
+    divResultImg_82: {
+        padding: "40px", 
+        background: "#E8FBFF", 
+        maxWidth: "909px", 
+        maxHeight: "504px",
+        display: "flex",
+        [theme.breakpoints.only("xs")]: {
+            padding: "8px", 
+            marginBottom: "24px"
+        },
+    },
+    divResultImg_83: {
+        margin: "auto", 
+        padding: "40px 24px", 
+        background: "#E8FBFF", 
+        maxWidth: "288px", 
+        height: "504px",
+    },
+    containerBoss: {
+        background: "#E8FBFF", 
+        padding: "176px 72px 232px 72px",
+        [theme.breakpoints.only("xs")]: {
+            padding: "88px 40px 116px 40px",
+        }
+    },
+    divBossImg: {
         marginLeft: "auto",
         [theme.breakpoints.down("md")]: {
             margin: "unset",
         }
-    }
+    },
 }));
 
 function Content() {
@@ -222,6 +299,11 @@ function Content() {
     return (
         <>
             <Grid container className={contentStyle.container} style={{ background: "#E8FBFF" }}>
+                <Hidden smUp>
+                    <Grid item container justify="center" xs={12} sm={12} md={12} lg={7} xl={7} style={{ marginBottom: "40px" }}>
+                        <img src="./images/rectangle_74.svg" alt="" className={contentStyle.rectangle_74} />
+                    </Grid>
+                </Hidden>
                 <Grid item xs={12} sm={12} md={12} lg={5} xl={5}>
                     <Typography variant="h1" className={contentStyle.h1} style={{ ineHeight: "98px", }}>
                         Atinja seu público alvo
@@ -258,9 +340,11 @@ function Content() {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item container justify="center" xs={12} sm={12} md={12} lg={7} xl={7} style={{ marginBottom: "40px" }}>
-                    <img src="./images/rectangle_74.svg" alt="" className={contentStyle.rectangle_74} />
-                </Grid>
+                <Hidden only="xs">
+                    <Grid item container justify="center" xs={12} sm={12} md={12} lg={7} xl={7} style={{ marginBottom: "40px" }}>
+                        <img src="./images/rectangle_74.svg" alt="" className={contentStyle.rectangle_74} />
+                    </Grid>
+                </Hidden>
             </Grid>
             <Grid container justify="center" className={contentStyle.floatingContainer}>
                 <Hidden only="xs">
@@ -271,6 +355,16 @@ function Content() {
                         <img src="./images/rectangle_17.svg" className={contentStyle.floatingDivImgs} alt="" />
                         <img src="./images/rectangle_18.svg" className={contentStyle.floatingDivImgs} alt="" />
                         <img src="./images/rectangle_19.svg" alt="" />
+                    </Box>
+                </Hidden>
+                <Hidden smUp>
+                    <Box className={contentStyle.floatingDiv}>
+                        <img src="./images/rectangle_14.svg" className={contentStyle.floatingDivImgs} alt="" />
+                        <img src="./images/rectangle_15.svg" className={contentStyle.floatingDivImgs} alt="" />
+                        <img src="./images/rectangle_16.svg" className={contentStyle.floatingDivImgs} alt="" />
+                        <img src="./images/rectangle_17.svg" className={contentStyle.floatingDivImgs} alt="" />
+                        <img src="./images/rectangle_18.svg" className={contentStyle.floatingDivImgs} alt="" />
+                        <img src="./images/rectangle_19.svg" className={contentStyle.floatingDivImgs} alt="" />
                     </Box>
                 </Hidden>
                 <Grid item xs={12} sm={12} md={6} lg={7} xl={6}>
@@ -502,7 +596,7 @@ function Content() {
                     <SimpleModal stateModal={stateModal} setStateModal={setStateModal} />
                 </Grid>
             </Grid>
-            <Hidden xsDown>
+            <Hidden only="xs">
                 <Grid container style={{ background: "#F7F7F7", padding: "176px 72px 72px 72px", }} id="Results">
                     <Grid item style={{ marginBottom: "24px"}}>
                         <Typography variant="subtitle2">
@@ -595,7 +689,71 @@ function Content() {
                     </Grid>
                 </Grid>
             </Hidden>
-            <Grid container style={{ background: "#E8FBFF", padding: "176px 72px 232px 72px" }} id="Boss">
+            <Hidden smUp>
+                <Grid container className={contentStyle.containerResults} id="Results">
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Dra. Alana Mirely
+                        </Typography>
+                        <Typography variant="h4">
+                            Campanha para uma parceira da odontologia, para agendamentos em seu Whatsapp.
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item container alignContent="center" xs={12} sm={12} md={12} lg={9} xl={10} 
+                            className={contentStyle.divResultImg_77}
+                        >
+                            <img src="./images/rectangle_77.jpeg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            className={contentStyle.divResultImg_79}
+                        >
+                            <img src="./images/rectangle_79.svg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Dona Costela Delivery
+                        </Typography>
+                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
+                            Parceira de um restaurante delivery em Brasília.
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            className={contentStyle.divResultImg_80}
+                        >
+                            <img src="./images/rectangle_80.jpeg" alt="" style={{ margin: "auto", width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            className={contentStyle.divResultImg_81}
+                        >
+                            <img src="./images/rectangle_81.jpeg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                    <Grid item style={{ marginBottom: "24px"}}>
+                        <Typography variant="subtitle2">
+                            Rodrigo Sousa Personal
+                        </Typography>
+                        <Typography variant="h4" style={{ maxWidth: "595px" }}>
+                            Campanha de inscrições abertas, parceiro de um projeto de treinamento físico para emagrecimento
+                        </Typography>
+                    </Grid>
+                    <Grid item container style={{ marginBottom: "24px", borderBottom: "1px solid #D1D1D1", paddingBottom: "64px" }}>
+                        <Grid item xs={12} sm={12} md={12} lg={9} xl={10} 
+                            className={contentStyle.divResultImg_82}
+                        >
+                            <img src="./images/rectangle_82.jpeg" alt="" style={{ margin: "auto", width: "100%" }} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={12} lg={3} xl={2} 
+                            className={contentStyle.divResultImg_83}
+                        >
+                            <img src="./images/rectangle_83.jpeg" alt="" style={{ width: "100%" }} />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Hidden>
+            <Grid container className={contentStyle.containerBoss} id="Boss">
                 <Grid item style={{ maxWidth: "488px" }}>
                     <Typography variant="subtitle1" className={contentStyle.subtitle1} style={{ marginBottom: "32px" }}>
                         Quem sou eu?
@@ -629,7 +787,7 @@ function Content() {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid item className={contentStyle.divBoss} style={{ maxWidth: "595px", maxHeight: "691px", }}>
+                <Grid item className={contentStyle.divBossImg} style={{ maxWidth: "595px", maxHeight: "691px", }}>
                     <img src="./images/boss.svg" alt="" style={{ width: "100%" }} />
                 </Grid>
             </Grid>
