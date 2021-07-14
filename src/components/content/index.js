@@ -547,12 +547,16 @@ function Content() {
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Button variant="contained" color="primary" 
-                            style={{ 
-                                height: "64px", 
-                                width: "281px",
-                                borderRadius: "6px",
-                            }}>
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        style={{ 
+                            height: "64px", 
+                            width: "281px",
+                            borderRadius: "6px",
+                        }}
+                        href="#Form"
+                    >
                         <Typography variant="button" style={{ fontSize: "20px", fontWeight: "900" }}>
                             Entrar em contato
                         </Typography>
