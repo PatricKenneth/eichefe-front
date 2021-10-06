@@ -1,6 +1,6 @@
 {
-  "short_name": "Ei Chefe ADS",
-  "name": "Ei Chefe ADS",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,8 +1,13 @@
-import PageLayout from "./components/pageLayout";
+import React from "react";
+import Home from './components/home';
+import { ThemeProvider } from "@material-ui/styles";
+import theme from './theme';
 
 function App() {
   return (
-    <PageLayout />
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
 

@@ -1,61 +1,32 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
-        main: "#0085E8",
+      main: '#0085E8',
     },
+    secondary: {
+      main: '#C5C5C5',
+    }
   },
   typography: {
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: 'Montserrat, sans-serif',
     body1: {
-      fontSize: "18px",
-      fontStyle: "normal",
-      fontWeight: "400",
-      letterSpacing: "0em",
-      color: "#474747",
+      color: "#C5C5C5",
+      fontWeight: 600,
+    },
+    body2: {
+      color: '#C5C5C5'
+    },
+    h2: {
+      color: "#F4FDFF",
+      fontWeight: 800,
+      lineHeight: '78px',
     },
     button: {
-      fontSize: "13px",
-      fontStyle: "normal",
-      fontWeight: "500",
-      letterSpacing: "0em",
-      color: "#F7F7F7",
-    },
-    h1: {
-      fontSize: "72px",
-      fontStyle: "normal",
-      fontWeight: "900",
-      letterSpacing: "0em",
-      color: "#0085E8",
-    },
-    subtitle1: {
-      fontSize: "48px",
-      fontStyle: "normal",
-      fontWeight: "900",
-      letterSpacing: "0em",
-      color: "#27AED8",
-    },
-    subtitle2: {
-      fontSize: "36px",
-      fontStyle: "normal",
-      fontWeight: "900",
-      letterSpacing: "0em",
-      color: "#27AED8",
-    },
-    h4: {
-      fontSize: "24px",
-      fontStyle: "normal",
-      fontWeight: "400",
-      letterSpacing: "0em",
-      color: "#474747",
-    },
-    h5: {
-      fontSize: "22px",
-      fontStyle: "normal",
-      fontWeight: "700",
-      letterSpacing: "0em",
-      color: "#242424",
+      color: "#C5C5C5",
+      fontWeight: 700,
+      textTransform: 'none',
     },
   },
 });
