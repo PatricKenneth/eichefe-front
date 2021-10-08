@@ -23,6 +23,21 @@ const theme = createTheme({
       fontWeight: 800,
       lineHeight: '78px',
     },
+    h3: {
+      color: "#0085E8",
+      fontWeight: 600,
+      lineHeight: '40px',
+    },
+    h5: {
+      color: "#C5C5C5",
+      fontWeight: 700,
+      lineHeight: '32px',
+    },
+    h6: {
+      color: "#F7F7F7",
+      fontWeight: 700,
+      lineHeight: '24px',
+    },
     button: {
       color: "#C5C5C5",
       fontWeight: 700,
