@@ -46,6 +46,9 @@ const theme = createTheme({
       fontSize: "16px",
       lineHeight: "18px",
       color: "#C5C5C5",
+    },
+    button: {
+      textTransform: "none",
     }
   },
 });
