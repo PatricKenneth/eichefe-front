@@ -5,8 +5,11 @@ const styles = makeStyles(( theme ) => ({
     config: {
         maxWidth: '1366px', 
         paddingLeft: '168px', 
-        paddingRight: '168px'
-        // [theme.breakpoints.only('md')]: {,
+        paddingRight: '168px',
+        [theme.breakpoints.down('md')]: { 
+            paddingLeft: '40px', 
+            paddingRight: '40px',
+        }
     }
 }));
 

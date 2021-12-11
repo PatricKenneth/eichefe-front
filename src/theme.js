@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -11,38 +11,42 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Montserrat, sans-serif',
-    body1: {
-      color: "#C5C5C5",
-      fontWeight: 600,
-    },
-    body2: {
-      color: '#C5C5C5'
+    h1: {
+      fontWeight: 800,
+      fontSize: "64px",
+      lineHeight: "78px",
+      color: "#F4FDFF",
     },
     h2: {
-      color: "#F4FDFF",
-      fontWeight: 800,
-      lineHeight: '78px',
+      fontWeight: 600,
+      fontSize: "48px",
+      lineHeight: "59px",
+      color: "#0085E8",
     },
     h3: {
-      color: "#0085E8",
       fontWeight: 600,
-      lineHeight: '40px',
+      fontSize: "36px",
+      lineHeight: "44px",
+      color: "#0085E8",
+    },
+    h4: {
+      fontWeight: 500,
+      fontSize: "24px",
+      lineHeight: "29px",
+      color: "#C5C5C5",
     },
     h5: {
+      fontWeight: 600,
+      fontSize: "18px",
+      lineHeight: "22px",
       color: "#C5C5C5",
-      fontWeight: 700,
-      lineHeight: '32px',
     },
     h6: {
-      color: "#F7F7F7",
-      fontWeight: 700,
-      lineHeight: '24px',
-    },
-    button: {
+      fontWeight: 500,
+      fontSize: "16px",
+      lineHeight: "18px",
       color: "#C5C5C5",
-      fontWeight: 700,
-      textTransform: 'none',
-    },
+    }
   },
 });
 
