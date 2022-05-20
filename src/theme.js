@@ -47,6 +47,12 @@ const theme = createTheme({
       lineHeight: "18px",
       color: "#C5C5C5",
     },
+    label: {
+      fontWeight: "normal",
+      fontSize: "14px",
+      lineHeight: "17px",
+      color: "#C5C5C5",
+    },
     button: {
       textTransform: "none",
     }
